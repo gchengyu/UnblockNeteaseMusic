@@ -13,10 +13,10 @@ const provider = {
 	bilibili: require('./bilibili')
 }
 
-const match = (id, source) => {
+const match = (id, source, data) => {
 	let meta = {}
 	const candidate = (source || global.source || ['bilibili','qq', 'kuwo', 'migu']).filter(name => name in provider)
-	return find(id)
+	return find(id, data)
 	.then(info => {
 		meta = info
 		return Promise.all(candidate.map(name => provider[name].check(info).catch(() => {})))
