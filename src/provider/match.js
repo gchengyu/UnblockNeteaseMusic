@@ -25,6 +25,7 @@ const match = (id, source, data) => {
 		urls = urls.filter(url => url)
 		return Promise.all(urls.map(url => check(url)))
 	})
+	
 	.then(songs => {
 		songs = songs.filter(song => song.url)
 		if (!songs.length) return Promise.reject()
