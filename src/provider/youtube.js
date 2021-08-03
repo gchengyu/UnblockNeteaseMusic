@@ -2,8 +2,8 @@ const cache = require('../cache')
 const request = require('../request')
 const parse = query => (query || '').split('&').reduce((result, item) => (item = item.split('=').map(decodeURIComponent), Object.assign({}, result, {[item[0]]: item[1]})), {})
 
-// const proxy = require('url').parse('http://127.0.0.1:1080')
-const proxy = undefined
+const proxy = require('url').parse('http://127.0.0.1:7890')
+// const proxy = undefined
 const key = process.env.YOUTUBE_KEY || null // YouTube Data API v3
 
 const signature = (id = '-tKVN2mAKRI') => {

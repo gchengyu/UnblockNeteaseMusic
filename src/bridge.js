@@ -4,13 +4,15 @@ const parse = require('url').parse
 require('./provider/insure').disable = true
 
 const router = {
+	netease: require('./provider/netease'),
 	qq: require('./provider/qq'),
-	xiami: require('./provider/xiami'),
 	baidu: require('./provider/baidu'),
 	kugou: require('./provider/kugou'),
 	kuwo: require('./provider/kuwo'),
 	migu: require('./provider/migu'),
-	joox: require('./provider/joox')
+	joox: require('./provider/joox'),
+	youtube: require('./provider/youtube'),
+	bilibili: require('./provider/bilibili')
 }
 
 const distribute = (url, router) =>
